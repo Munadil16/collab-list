@@ -2,7 +2,11 @@ import dotenv from "dotenv";
 import express from "express";
 import type { Application, Request, Response, NextFunction } from "express";
 
+import connectDb from "./db";
+
 dotenv.config();
+
+connectDb();
 
 const app: Application = express();
 const PORT = process.env.PORT ?? 3000;
